@@ -1,0 +1,228 @@
+.widget-area .widget .widget-title, .cross-sells h2, .grid-col-checkout .cart_totals h2, .grid-col-checkout .woocommerce-billing-fields h3, .grid-col-checkout .woocommerce-shipping-fields h3, #order_review_heading, .u-column1 h2, .u-column2 h2, .upsells h2, .related h2, .woocommerce-additional-fields h3, .woocommerce-Address-title h3 , .grid-col-checkout h3 {
+    width: 100%;
+    height: auto;
+    line-height: 21px;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: #fafafa;
+    border-left: 4px solid #1e85be;
+    margin-bottom: 12px !important;
+	margin-top: 10px !important;
+    text-transform: uppercase;
+    display: inline-block;
+    color: #555555;
+    font-size: 16px;
+    font-weight: 500;
+}
+body.woocommerce-js form.woocommerce-checkout {
+    padding: 10px;
+}
+.grid-col-checkout .expresss-one-page-coupen input[type="button"], .grid-col-checkout .expresss-one-page-coupen input[type="submit"] {
+    border: 1px solid;
+    border-color: #1e85be;
+     background-color: #1e85be; 
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1;
+    padding: 11px 18px;
+}
+.express-one-page-checkout-main a{
+	color: #1e85be;
+}
+.express-one-page-checkout-main a:hover{
+    color: #1e85be;
+    text-decoration: underline;
+}
+.expresss-one-page-payment .woocommerce #payment #place_order, .woocommerce-page #payment #place_order {
+    float: right;
+    background: #1e85be !important; 
+}
+.expresss-one-page-payment .woocommerce #payment #place_order:hover, .woocommerce-page #payment #place_order:hover {
+    background: #fff !important;
+    color: #1e85be !important;
+}
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
+    border: none !important; 
+}
+.woocommerce-checkout-review-order .woocommerce-info {
+    border-top-color: #1e85be;
+}
+.woocommerce-checkout-review-order .woocommerce-info:before {
+    color: #1e85be;
+}
+.woocommerce  ul.woocommerce-error {
+    border-top-color: #1e85be !important;
+}
+.woocommerce .woocommerce-error:before {
+    color: #1e85be;
+}
+.express-one-page-checkout-main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.review_meta_data {
+    font-size: 12px;
+}
+.variation_li {
+    display: inline-flex;
+	height: 10px;
+}
+ .woocommerce-checkout .express-one-page-checkout-main .form-row {
+    padding: 0 !important;
+    margin: 0 0 5px !important;
+}
+/* .woocommerce   form .checout-one-page-grid .form-row label {
+    line-height: 1.5 !important;
+}  */
+.grid-col-2.grid-col-checkout {
+    background-image: linear-gradient(to top,#fff 20%,#e6e6e6);
+    padding: 0px 10px;
+}
+.grid-col-checkout .expresss-one-page-payment {
+    padding: 5px 10px;
+}
+
+/*login form*/
+#onestepcheckout-login-table .login_popup {
+    width: 80%;
+    display: inline-block;
+    float: left
+}
+#onestepcheckout-login-table .login_popup>.input-box {
+    width: 50%;
+    float: left;
+    padding-right: 20px
+}
+#onestepcheckout-login-table .input-box.input-button {
+    width: 20%;
+    margin: 0;
+    float: left
+}
+#onestepcheckout-login-table .input-box.input-button .button {
+    width: 100%;
+    background-image: none;
+    color: #fff;
+    background-color: #20592e;
+    font-family: "montserratbold";
+   padding: 5px;
+}
+table.onestepcheckout-summary td {
+    border: none !important;
+}
+table.onestepcheckout-summary th
+{
+    border: none;
+    border-bottom: 1px solid #CCC;
+    text-align: left;
+}
+.grid-col-checkout .woocommerce-checkout-review-order-table .expresss-one-page-coupen
+{
+	margin:0px;
+/* 	padding: 10px 15px; */
+
+}
+.grid-col-checkout .woocommerce-checkout-review-order-table .woocommerce-info
+{
+	margin:0px;
+	border-top-color: #1e85be;
+}
+}
+.grid-col-checkout form.checkout_coupon.expresss-one-page-coupen {
+    padding: 10px !important;
+	    width: 100%;
+}
+.grid-col-checkout form.checkout_coupon.expresss-one-page-coupen .form-row-first {
+    width: 50%;
+    float: left;
+}
+.grid-col-checkout form.checkout_coupon.expresss-one-page-coupen .form-row-last {
+    width: 40%;
+    float: left;
+}
+.grid-col-checkout .cart_totals  div {
+    border-top: 1px solid;
+}
+.grid-col-checkout .cart_totals  p.left-corner {
+    display: inline-block;
+	    width: 70%;
+
+} 
+.grid-col-checkout .cart_totals  span.right-corner {
+        float: right;
+	}
+.grid-col-checkout textarea#order_comments {
+    background: #fff !important;
+}
+.more_details_slide .variation_li p {
+    font-size: 12px;
+    line-height: 0.5px;
+}
+#express-one-page-order-payment ul.wc_payment_methods.payment_methods.methods {
+    list-style: none;
+	margin: 0px;
+}
+.woocommerce ul#shipping_method {
+    list-style: none outside;
+    margin-left: 15px !important;
+    padding: 0;
+	text-align: left;
+}
+
+.login_popup .input-box .input-text {
+    width: 100%;
+}
+form.woocommerce-form.woocommerce-form-login.login.onepage-checkout {
+    background: #fff;
+	margin: 1px 0px;
+    padding: 0px;
+}
+form.woocommerce-form.woocommerce-form-login.login.onepage-checkout {
+    min-height: 50px;
+}
+#express-one-page-order-review td.qty {
+    vertical-align: top;
+    padding-top: 20px;
+	text-align: center;
+}
+#express-one-page-order-review td.total {
+    vertical-align: top;
+    padding-top: 20px;
+	text-align: center;
+}
+.woocommerce form.checkout #order_review {
+	display:block !important;
+}
+.woocommerce-checkout-review-order-table .cart_totals {
+    padding: 10px;
+	border: none;
+}
+.woocommerce-checkout-review-order-table .cart_totals div {
+    padding: 5px 0px;
+}
+.shop_table tr.coupon_checkout {
+    display: none;
+}
+
+@media screen and (max-width: 768px)
+{
+.express-one-page-checkout-main {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px,auto);
+}
+}
+@media screen and (max-width: 425px)
+{
+.express-one-page-checkout-main {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px,auto);
+}
+}
