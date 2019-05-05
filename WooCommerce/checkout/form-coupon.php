@@ -22,7 +22,7 @@ if ( ! wc_coupons_enabled() ) { // @codingStandardsIgnoreLine.
 }
 
 if ( empty( WC()->cart->applied_coupons ) ) {
-	$info_message = '<a href="#" class="showcoupon">' . esc_html__( 'Coupon apply', 'puca' ) . '<i class="icons icon-arrow-down"></i></a>';
+	$info_message = '<a href="#" class="showcoupon">' . esc_html__( 'Coupon apply', 'cclw' ) . '<i class="icons icon-arrow-down"></i></a>';
 	wc_print_notice( $info_message, 'notice' );
 }
 ?>
@@ -30,11 +30,11 @@ if ( empty( WC()->cart->applied_coupons ) ) {
 <form class="checkout_coupon expresss-one-page-coupen" method="post" style="display:none" >
 
 	<p class="form-row form-row-first">
-		<input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'puca' ); ?>" id="coupon_code" value="" />
+		<input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'cclw' ); ?>" id="coupon_code" value="" />
 	</p>
 
 	<p class="form-row form-row-last">
-		<input type="submit" class="coupon_button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'puca' ); ?>" />
+		<input type="submit" class="coupon_button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'cclw' ); ?>" />
 	</p>
 
 	<div class="clear"></div>

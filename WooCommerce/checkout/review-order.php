@@ -26,10 +26,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 <table class="onestepcheckout-summary">
     <thead>
         <tr>
-            <th class="name" colspan="1">Product</th>
+            <th class="thumb">Product</th>
             <th class="qty">Qty</th>
            
             <th class="total">Total</th>
+			<th class="removepro">Remove</th>
         </tr>
     </thead>
 	<?php
@@ -43,7 +44,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				?>
 				
 	<tr>
-        <td class="name">
+	
+        <td class="thumb">
 			<?php
 			$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(array( 50, 80 )), $cart_item, $cart_item_key );
 
@@ -55,25 +57,48 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 			
           <?php  //echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';          ?>
-		  <?php  echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';          ?>
-		  <a class="more_details">Details</a>
-		  <div class="more_details_slide"><?php   echo wc_get_formatted_cart_item_data( $cart_item ); ?></div>
+		  
           </td>
+		 
 
         
         <!--<td class="editcart">
             <a href="#" class="subsqty" name="substract">-</a>
         </td>-->
-        <td class="qty" nowrap=""><?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', sprintf('%s', $cart_item['quantity'] ), $cart_item, $cart_item_key ); ?></td>
-        <!--<td class="editcart wider" nowrap>
-            <a href="#" class="addsqty" name="add">+</a>
-
-
-
-        </td>-->
+        <td class="qty" nowrap="">
+			<div class="quantity">
+	      
+			<input type="number" id="qty1" class="input-text qty text" step="1" min="1" max="<?php echo  $_product->get_stock_quantity();?>" name="cart[<?php echo $cart_item_key; ?>][qty]" value="<?php echo $cart_item['quantity'];?>" title="Qty" size="4" inputmode="numeric">
+			</div>
+		
+		</td>
+      
         <td class="total">
                         <span class="price"><?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); ?></span>                    </td>
+		 <td class="removepro">
+		  
+		  <?php 
+		  $product_id = $cart_item['product_id'];
+		  
+		  printf(
+                          '<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+                          esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+                          __( 'Remove this item', 'woocommerce' ),
+                          esc_attr( $product_id ),
+                          esc_attr( $_product->get_sku() )
+                        );
+						?>
+		 </td>	
+	 
     </tr>
+	<tr>
+	<td colspan="4" class="name more_details">
+	<?php  echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';          ?>
+	 <div class="more_details_slide"><?php   echo wc_get_formatted_cart_item_data( $cart_item ); ?></div>
+	
+	</td>	
+	</tr>
+	
 				<?php
 			}
 		}
@@ -90,9 +115,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 </table>	
 <?php woocommerce_checkout_coupon_form();?>
 	<div class="cart_totals">
-		<h2><?php esc_html_e('Cart totals', 'puca'); ?></h2>
+		<h2><?php esc_html_e('Cart totals', 'cclw'); ?></h2>
 		<div class="cart-subtotal">
-			<p class="left-corner"><?php esc_html_e( 'Subtotal', 'puca' ); ?></p>
+			<p class="left-corner"><?php esc_html_e( 'Subtotal', 'cclw' ); ?></p>
 			<span class="right-corner"><?php wc_cart_totals_subtotal_html(); ?></span>
 		</div>
 
@@ -129,7 +154,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
 
 		<div class="order-total">
-			<p class="left-corner"><?php esc_html_e( 'Total', 'puca' ); ?></p>
+			<p class="left-corner"><?php esc_html_e( 'Total', 'cclw' ); ?></p>
 			<span class="right-corner"><?php wc_cart_totals_order_total_html(); ?></span>
 		</div>
 

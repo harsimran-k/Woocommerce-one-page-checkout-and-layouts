@@ -32,7 +32,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 	
 	<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
 
-		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
+		<?php //do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
 		<div id="customer_address_details">
 			<?php do_action( 'woocommerce_checkout_billing' ); ?>

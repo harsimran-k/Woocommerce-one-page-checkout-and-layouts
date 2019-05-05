@@ -3,7 +3,7 @@
 Plugin Name: Woocommerce one page checkout and layouts
 Description: This plugin is designed to Combine Cart and Checkout process which gives users a faster checkout experience, with less interruption.
 Author: coolcoders
-Version: 1.0
+Version: 1.1
 License: GPL v2
 
 Text Domain: cclw
@@ -141,4 +141,73 @@ define('CCLW_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
    return $template;
   }
   
+   /*set product quantity*/ 
+		add_filter ('woocommerce_checkout_cart_item_quantity','cclw_add_quantity', 10, 2 );
+	   
+		 function cclw_add_quantity( $cart_item, $cart_item_key ) {
+				   $product_quantity= '';
+				   return $product_quantity;
+				}
+				
+		/**add some footer js*/		
+		add_action( 'wp_footer','cclw_add_js');
+     	
+        function cclw_add_js(){
+    	     
+            if (  is_checkout() ) {
+				
+            ?>
+                <script type="text/javascript">
+					
+                    <?php  $admin_url = get_admin_url(); ?>
+					jQuery("form.checkout #order_review").on("change", "input.qty", function(){
+                       
+                        var data = {
+                    		action: 'cclw_update_order_review',
+                    		security: wc_checkout_params.update_order_review_nonce,
+                    		post_data: jQuery( 'form.checkout' ).serialize()
+                    	};
+						
+                    	jQuery.post( '<?php echo $admin_url; ?>' + 'admin-ajax.php', data, function( response )
+                		{
+                            jQuery( 'body' ).trigger( 'update_checkout' );
+						});
+                    });
+                </script>
+             <?php  
+             }
+        }
+        add_action( 'init','cclw_load_ajax' );
+        function cclw_load_ajax() {
+        
+            if ( !is_user_logged_in() ){
+                add_action( 'wp_ajax_nopriv_cclw_update_order_review','cclw_update_order_review');
+            } else{
+                add_action( 'wp_ajax_cclw_update_order_review','cclw_update_order_review');
+            }
+        
+        }
+        
+        function cclw_update_order_review() {
+             
+            $values = array();
+            parse_str($_POST['post_data'], $values);
+            $cart = $values['cart'];
+            foreach ( $cart as $cart_key => $cart_value ){
+                WC()->cart->set_quantity( $cart_key, $cart_value['qty'], false );
+                WC()->cart->calculate_totals();
+                woocommerce_cart_totals();
+            }
+            exit;
+        }
+		function cclw_myplugin_deactivate() {
+			update_option( 'overide_checkout', 0 );
+			$filename = get_template_directory().'/woocommerce/checkout-test';
+			$new_name  =  get_template_directory().'/woocommerce/checkout';
+					if  (file_exists($filename)) {
+					rename( $filename, $new_name);	
+					}
+		}
+
+		register_deactivation_hook( __FILE__, 'cclw_myplugin_deactivate' );
 

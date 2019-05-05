@@ -1,4 +1,7 @@
-.widget-area .widget .widget-title, .cross-sells h2, .grid-col-checkout .cart_totals h2, .grid-col-checkout .woocommerce-billing-fields h3, .grid-col-checkout .woocommerce-shipping-fields h3, #order_review_heading, .u-column1 h2, .u-column2 h2, .upsells h2, .related h2, .woocommerce-additional-fields h3, .woocommerce-Address-title h3 , .grid-col-checkout h3 {
+form.checkout.woocommerce-checkout {
+    -webkit-box-shadow: 0 6px 15px 10px rgba(0,0,0,.2);
+}
+ .cross-sells h2, .grid-col-checkout .cart_totals h2, .grid-col-checkout .woocommerce-billing-fields h3, .grid-col-checkout .woocommerce-shipping-fields h3, #order_review_heading, .woocommerce-additional-fields h3, .woocommerce-Address-title h3 , .grid-col-checkout h3 {
     width: 100%;
     height: auto;
     line-height: 21px;
@@ -27,7 +30,10 @@ body.woocommerce-js form.woocommerce-checkout {
     font-size: 14px;
     line-height: 1;
     padding: 11px 18px;
+	text-transform: none;
+    letter-spacing: 0px;
 }
+
 .express-one-page-checkout-main a{
 	color: #1e85be;
 }
@@ -111,6 +117,9 @@ body.woocommerce-js form.woocommerce-checkout {
     font-family: "montserratbold";
    padding: 5px;
 }
+table.onestepcheckout-summary  {
+    border: none !important;
+}
 table.onestepcheckout-summary td {
     border: none !important;
 }
@@ -119,6 +128,7 @@ table.onestepcheckout-summary th
     border: none;
     border-bottom: 1px solid #CCC;
     text-align: left;
+	padding: 0px;
 }
 .grid-col-checkout .woocommerce-checkout-review-order-table .expresss-one-page-coupen
 {
@@ -130,8 +140,9 @@ table.onestepcheckout-summary th
 {
 	margin:0px;
 	border-top-color: #1e85be;
+	width: 100%;
 }
-}
+
 .grid-col-checkout form.checkout_coupon.expresss-one-page-coupen {
     padding: 10px !important;
 	    width: 100%;
@@ -148,6 +159,7 @@ table.onestepcheckout-summary th
     border-top: 1px solid;
 }
 .grid-col-checkout .cart_totals  p.left-corner {
+	    margin: 0px;
     display: inline-block;
 	    width: 70%;
 
@@ -192,10 +204,15 @@ form.woocommerce-form.woocommerce-form-login.login.onepage-checkout {
 #express-one-page-order-review td.total {
     vertical-align: top;
     padding-top: 20px;
-	text-align: center;
+	text-align: right;
+    padding-right: 0px;
 }
-.woocommerce form.checkout #order_review {
+.woocommerce form.checkout .grid-col-checkout #express-one-page-order-review #order_review {
 	display:block !important;
+	float: none ;
+	width: 100% ;
+	padding :5px;
+	border: none;
 }
 .woocommerce-checkout-review-order-table .cart_totals {
     padding: 10px;
@@ -207,7 +224,56 @@ form.woocommerce-form.woocommerce-form-login.login.onepage-checkout {
 .shop_table tr.coupon_checkout {
     display: none;
 }
+.onestepcheckout-summary .removepro a.remove {
+  
+	color: red !important;
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 0px;
+    padding: 0;
+    text-align: center;
+    vertical-align: top;
+    text-align: center;
+    border: 0;
+     float: right;
+	 background:none;
+   
+}
+   .onestepcheckout-summary .removepro a.remove:hover {
+  
+   color: red !important;
+   background:none !important;
+}
+.woocommerce .onestepcheckout-summary .quantity .qty {
+    width: auto;
+    width: 40px;
+    padding: 2px;
+}
 
+.onestepcheckout-summary th.total, th.removepro {
+    text-align: right !important;
+}
+.onestepcheckout-summary td.name.more_details {
+    border-bottom: 1px solid #CCC !important;
+}
+table.onestepcheckout-summary {
+    width: 100%;
+}
+.onestepcheckout-summary .price>.amount {
+    font-size: 15px;
+}
+.onestepcheckout-summary   tbody tr {
+	
+	  height:auto !important;
+       border-bottom: none !important;  
+}
+.onestepcheckout-summary td {
+    padding: 5px 0px !important;
+}
+#express-one-page-order-review .shop_table{
+   border: none !important;
+}
 @media screen and (max-width: 768px)
 {
 .express-one-page-checkout-main {
